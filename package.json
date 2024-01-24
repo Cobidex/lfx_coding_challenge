@@ -1,0 +1,14 @@
+{
+  "name": "lfx_coding_challenge",
+  "version": "1.0.0",
+  "description": "code challenge",
+  "main": "main.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitest": "^1.2.1"
+  }
+}
