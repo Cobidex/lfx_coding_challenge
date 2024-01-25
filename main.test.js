@@ -22,4 +22,16 @@ describe('The processList function', () => {
         const array = [];
         expect(processList(array)).toEqual([]);
     });
+
+    it('throws an error when a non-array list is passed to it', () => {
+        const array1 = 'string';
+        const array2 = {'a': 10};
+        expect(() => processList(array1)).toThrowError(new Error('List not an array'));
+        expect(() => processList(array2)).toThrowError(new Error('List not an array'));
+    });
+
+    it('throws an error when no argument is passed', () => {
+        expect(() => processList()).toThrowError(new Error('List not an array'));
+    });
+
 });
