@@ -34,4 +34,9 @@ describe('The processList function', () => {
         expect(() => processList()).toThrowError(new Error('List not an array'));
     });
 
+    it('throws an error when 1 element is not a number', () => {
+        const array = [10, 20, 30, 40, 50, 'string', 70, 80, 90, 100];
+        expect(() => processList(array)).toThrowError(new Error("List must be made up of numbers"));
+    });
+
 });
