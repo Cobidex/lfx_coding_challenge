@@ -1,16 +1,14 @@
 /*
-  processList - processes a list of integers
+  processList - processes a list
 
-  @list: array of integers
+  @list: array
 
-  Returns: array of integers or throws an error
+  Returns: mutated array or throws an error
 */
 export default function processList(list) {
-    if (!Array.isArray(list)) throw new Error('List not an array');
-    list.map((el) => {
-        if (!(typeof el === 'number')) throw new Error('List must be made up of numbers');
-        if (el % 10 !== 0) throw new Error("number not a multiple of 10");
-    });
+    if (!list) throw new Error('You must provide an argument');
+    if (!Array.isArray(list)) throw new Error('argument must be an array');
+    if (list.length === 0 || list.length % 10 !== 0) throw new Error('length of list must be a multiple of 10');
 
     return list.filter((el, index) => !((index % 2 === 0 || index % 3 === 0) && index !== 0));
 }
